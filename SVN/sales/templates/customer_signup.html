@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="display: flex; flex-direction: column; min-height: 85vh; box-sizing: border-box;">
+    <div style="flex: 1; display: flex; justify-content: center; align-items: center; width: 100%; box-sizing: border-box;">
+        <div class="registration-container" style="max-width: 400px; width: 100%; padding: 20px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); box-sizing: border-box;">
+            <h2 style="text-align: center;">Customer Registration</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group" style="margin-bottom: 10px;">
+                    <label for="name" style="display: block; margin-bottom: 5px;">Name:</label>
+                    <input type="text" id="name" name="name" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 10px;">
+                    <label for="email" style="display: block; margin-bottom: 5px;">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 10px;">
+                    <label for="password" style="display: block; margin-bottom: 5px;">Password:</label>
+                    <input type="password" id="password" name="password" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 10px;">
+                    <label for="confirm_password" style="display: block; margin-bottom: 5px;">Confirm Password:</label>
+                    <input type="password" id="confirm_password" name="confirm_password" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px;">Register</button>
+            </form>
+            <div style="text-align: center; margin-top: 15px;">
+                <p>Want to register as a shop?</p>
+                <a href="{% url 'shop_signup' %}" class="btn btn-secondary" style="padding: 10px; background-color: #6c757d; color: white; border: none; border-radius: 4px; text-decoration: none;">Register as Shop</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
