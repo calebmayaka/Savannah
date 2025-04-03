@@ -7,24 +7,36 @@
             <h2 style="text-align: center;">Customer Registration</h2>
             <form method="post">
                 {% csrf_token %}
+                
+                <!-- Name Field -->
                 <div class="form-group" style="margin-bottom: 10px;">
                     <label for="name" style="display: block; margin-bottom: 5px;">Name:</label>
-                    <input type="text" id="name" name="name" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" required>
+                    <input type="text" id="name" name="name" class="form-control">
                 </div>
+
+                <!-- Email Field -->
                 <div class="form-group" style="margin-bottom: 10px;">
                     <label for="email" style="display: block; margin-bottom: 5px;">Email:</label>
-                    <input type="email" id="email" name="email" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" required>
+                    <input type="email" id="email" name="email" class="form-control">
                 </div>
+
+                <!-- Password Field -->
                 <div class="form-group" style="margin-bottom: 10px;">
-                    <label for="password" style="display: block; margin-bottom: 5px;">Password:</label>
-                    <input type="password" id="password" name="password" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" required>
+                    <label for="password1" style="display: block; margin-bottom: 5px;">Password:</label>
+                    <input type="password" id="password1" name="password1" class="form-control">
                 </div>
+
+                <!-- Confirm Password Field -->
                 <div class="form-group" style="margin-bottom: 10px;">
-                    <label for="confirm_password" style="display: block; margin-bottom: 5px;">Confirm Password:</label>
-                    <input type="password" id="confirm_password" name="confirm_password" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" required>
+                    <label for="password2" style="display: block; margin-bottom: 5px;">Confirm Password:</label>
+                    <input type="password" id="password2" name="password2" class="form-control">
                 </div>
+
+                <!-- Submit Button -->
                 <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px;">Register</button>
             </form>
+
+            <!-- Link to Shop Registration -->
             <div style="text-align: center; margin-top: 15px;">
                 <p>Want to register as a shop?</p>
                 <a href="{% url 'shop_signup' %}" class="btn btn-secondary" style="padding: 10px; background-color: #6c757d; color: white; border: none; border-radius: 4px; text-decoration: none;">Register as Shop</a>
