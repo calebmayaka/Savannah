@@ -3,71 +3,26 @@
 {% block content %}
 <div style="display: flex; flex-direction: column; min-height: 85vh; box-sizing: border-box;">
     <div style="flex: 1; display: flex; justify-content: center; align-items: center; width: 100%; box-sizing: border-box;">
-        <div class="registration-container" style="max-width: 400px; width: 100%; padding: 20px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); box-sizing: border-box;">
-            <h2 style="text-align: center;">Customer Registration</h2>
+        <div class="login-container" style="max-width: 400px; width: 100%; padding: 20px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); box-sizing: border-box;">
+            <h2 style="text-align: center;">Login</h2>
             <form method="post">
                 {% csrf_token %}
-                
-                <!-- Name Field -->
-                <div class="form-group" style="margin-bottom: 10px;">
-                    <label for="id_name" style="display: block; margin-bottom: 5px;">Name:</label>
-                    <input type="text" id="id_name" name="name" class="form-control" value="{{ form.name.value }}" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" required>
-                    {% if form.name.errors %}
-                        <div class="error" style="color: red; margin-top: 5px;">
-                            {% for error in form.name.errors %}
-                                <p>{{ error }}</p>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-                </div>
-
-                <!-- Email Field -->
                 <div class="form-group" style="margin-bottom: 10px;">
                     <label for="id_email" style="display: block; margin-bottom: 5px;">Email:</label>
-                    <input type="email" id="id_email" name="email" class="form-control" value="{{ form.email.value }}" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" required>
-                    {% if form.email.errors %}
-                        <div class="error" style="color: red; margin-top: 5px;">
-                            {% for error in form.email.errors %}
-                                <p>{{ error }}</p>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
+                    <input type="email" id="id_email" name="email" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" required>
                 </div>
 
-                <!-- Password Field -->
                 <div class="form-group" style="margin-bottom: 10px;">
-                    <label for="id_password1" style="display: block; margin-bottom: 5px;">Password:</label>
-                    <input type="password" id="id_password1" name="password1" class="form-control" value="{{ form.password1.value }}" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" required>
-                    {% if form.password1.errors %}
-                        <div class="error" style="color: red; margin-top: 5px;">
-                            {% for error in form.password1.errors %}
-                                <p>{{ error }}</p>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
+                    <label for="id_password" style="display: block; margin-bottom: 5px;">Password:</label>
+                    <input type="password" id="id_password" name="password" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" required>
                 </div>
 
-                <!-- Confirm Password Field -->
-                <div class="form-group" style="margin-bottom: 10px;">
-                    <label for="id_password2" style="display: block; margin-bottom: 5px;">Confirm Password:</label>
-                    <input type="password" id="id_password2" name="password2" class="form-control" value="{{ form.password2.value }}" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" required>
-                    {% if form.password2.errors %}
-                        <div class="error" style="color: red; margin-top: 5px;">
-                            {% for error in form.password2.errors %}
-                                <p>{{ error }}</p>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-                </div>
-
-                <!-- Submit Button -->
-                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px;">Register</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px;">Login</button>
             </form>
 
-            <!-- Link to Shop Registration -->
             <div style="text-align: center; margin-top: 15px;">
-                <p>Want to register as a shop?</p>
-                <a href="{% url 'shop_signup' %}" class="btn btn-secondary" style="padding: 10px; background-color: #6c757d; color: white; border: none; border-radius: 4px; text-decoration: none;">Register as Shop</a>
+                <p>Don't have an account?</p>
+                <a href="{% url 'customer_signup' %}" class="btn btn-secondary" style="padding: 10px; background-color: #6c757d; color: white; border: none; border-radius: 4px; text-decoration: none;">Register</a>
             </div>
         </div>
     </div>

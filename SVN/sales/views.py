@@ -25,7 +25,7 @@ def customersignup(request):
     # else:
     #     form = CustomerRegistrationForm()
 
-    # return render(request, 'customer_signup.html', {'form': form})
+    return render(request, 'customer_signup.html')
 
 def shopsignup(request):
     pass
@@ -47,7 +47,7 @@ def shopsignup(request):
     # else:
     #     form = ShopRegistrationForm()
 
-    # return render(request, 'shop_signup.html', {'form': form})
+    return render(request, 'shop_signup.html')
 
 def logout(request):
     pass
