@@ -3,12 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce Homepage</title>
+    <title>Welcome to ShopEasy</title>
     <style>
+        :root {
+            --primary:rgb(88, 94, 117);       /* Vibrant blue */
+            --primary-dark:rgb(30, 28, 34);  /* Deep blue */
+            --secondary: #f72585;    /* Energetic pink */
+            --accent: #4cc9f0;       /* Fresh teal */
+            --light: #f8f9fa;         /* Off-white */
+            --dark: #212529;          /* Dark gray */
+            --success: #38b000;       /* Green */
+            --warning: #ffaa00;       /* Yellow */
+            --danger: #ef233c;        /* Red */
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
             margin: 0;
             padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
         }
 
         /* Navbar styles */
@@ -16,196 +34,176 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #333;
-            padding: 10px 20px;
+            background-color: var(--primary-dark);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .navbar a {
             color: white;
             text-decoration: none;
-            padding: 8px 15px;
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
 
         .navbar a:hover {
-            background-color: #575757;
-            border-radius: 5px;
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
         }
 
         .navbar .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: orange;
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: white;
         }
 
         .navbar .menu {
             display: flex;
+            align-items: center;
         }
 
         /* Hero section styles */
         .hero {
-            background: url('https://via.placeholder.com/1500x300') no-repeat center center/cover;
-            height: 300px; /* Reduced height */
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            height: 70vh;
+            min-height: 500px;
             color: white;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
         }
 
         .hero h1 {
-            font-size: 40px; /* Adjusted font size */
+            font-size: 3.5rem;
             margin: 0;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero p {
-            font-size: 18px;
-            margin: 10px 0;
+            font-size: 1.25rem;
+            margin: 1rem 0 2rem;
+            max-width: 600px;
         }
 
-        .hero button {
-            padding: 10px 20px;
-            font-size: 18px;
-            background-color: #ff6600;
+        .cta-button {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            background-color: var(--secondary);
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 50px;
             cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
-        .hero button:hover {
-            background-color: #e65c00;
-        }
-
-        /* Featured products section */
-        .featured-products {
-            padding: 20px 20px; /* Reduced padding */
-            text-align: center;
-        }
-
-        .featured-products h2 {
-            font-size: 28px; /* Adjusted font size */
-            margin-bottom: 15px;
-        }
-
-        .products {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .product-card {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            width: 300px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .product-card img {
-            width: 100%;
-            border-radius: 5px;
-        }
-
-        .product-card h3 {
-            font-size: 20px;
-            margin: 10px 0;
-        }
-
-        .product-card p {
-            font-size: 16px;
-            color: #555;
-        }
-
-        .product-card button {
-            padding: 10px 15px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .product-card button:hover {
-            background-color: #218838;
+        .cta-button:hover {
+            background-color: #d91a6d;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
 
         /* Footer styles */
         .footer {
-            background-color: #333;
+            background-color: var(--dark);
             color: white;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 20px; /* Reduced margin */
+            padding: 2rem 0;
+            margin-top: auto;
         }
 
         .footer p {
             margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .navbar .menu {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Navbar -->
-    <div class="navbar">
+    <nav class="navbar">
         <a href="{% url 'homepage' %}" class="logo">ShopEasy</a>
         <div class="menu">
             <a href="#">Home</a>
             <a href="#">Shop</a>
             <a href="#">About</a>
             <a href="#">Contact</a>
-            <a href="{% url 'login' %}">Login</a>
-            <a href="#">Logout</a>
+            <a href="{% url 'login' %}" style="background-color: var(--accent); color: var(--dark);">Login</a>
         </div>
-    </div>
+    </nav>
 
     <!-- Hero Section -->
-    <div class="hero">
-        <h1>Welcome to ShopEasy</h1>
-        <p>Your one-stop shop for all your needs</p>
-        <button>Shop Now</button>
-    </div>
-
-    <!-- Featured Products Section -->
-    <div class="featured-products">
-        <h2>Featured Products</h2>
-        <div class="products">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x200" alt="Product 1">
-                <h3>Product 1</h3>
-                <p>$19.99</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x200" alt="Product 2">
-                <h3>Product 2</h3>
-                <p>$29.99</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x200" alt="Product 3">
-                <h3>Product 3</h3>
-                <p>$39.99</p>
-                <button>Add to Cart</button>
-            </div>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to ShopEasy</h1>
+            <p>Discover a world of convenience and style at your fingertips. Shop the latest trends with just a few clicks.</p>
+            <button class="cta-button">Start Shopping</button>
         </div>
-    </div>
+    </section>
 
     <!-- Footer -->
-    <div class="footer">
-        <p>&copy; 2023 ShopEasy. All rights reserved.</p>
-    </div>
+    <footer class="footer">
+        <p>&copy; 2025 ShopEasy. All rights reserved. | <a href="#" style="color: var(--accent);">Privacy Policy</a> | <a href="#" style="color: var(--accent);">Terms of Service</a></p>
+    </footer>
 
     <script>
-        document.querySelector('.hero button').addEventListener('click', () => {
-            alert('Redirecting to shop...');
-        });
-
-        document.querySelectorAll('.product-card button').forEach(button => {
-            button.addEventListener('click', () => {
-                alert('Product added to cart!');
-            });
+        document.querySelector('.cta-button').addEventListener('click', () => {
+            window.location.href = "#"; // Replace with actual shop URL
         });
     </script>
 </body>

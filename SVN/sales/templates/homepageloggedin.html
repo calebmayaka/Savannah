@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: orange;
+        }
+
+        .navbar .menu {
+            display: flex;
+        }
+
+        /* Hero section styles */
+        .hero {
+            background: url('https://via.placeholder.com/1500x300') no-repeat center center/cover;
+            height: 300px; /* Reduced height */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 40px; /* Adjusted font size */
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .hero button:hover {
+            background-color: #e65c00;
+        }
+
+        /* Featured products section */
+        .featured-products {
+            padding: 20px 20px; /* Reduced padding */
+            text-align: center;
+        }
+
+        .featured-products h2 {
+            font-size: 28px; /* Adjusted font size */
+            margin-bottom: 15px;
+        }
+
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .product-card h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .product-card p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .product-card button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .product-card button:hover {
+            background-color: #218838;
+        }
+
+        /* Footer styles */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px; /* Reduced margin */
+        }
+
+        .footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="{% url 'homepage' %}" class="logo">ShopEasy</a>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="{% url 'login' %}">Login</a>
+            <a href="#">Logout</a>
+        </div>
+    </div>
+
+    {% if not user.is_authenticated %}
+    <script>
+        window.location.href = "{% url 'homepage' %}";
+    </script>
+{% endif %}
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Welcome to ShopEasy</h1>
+        <p>Your one-stop shop for all your needs</p>
+        <button>Shop Now</button>
+    </div>
+
+    <!-- Featured Products Section -->
+    <div class="featured-products">
+        <h2>Featured Products</h2>
+        <div class="products">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>$19.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>$29.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200" alt="Product 3">
+                <h3>Product 3</h3>
+                <p>$39.99</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2023 ShopEasy. All rights reserved.</p>
+    </div>
+
+    <script>
+        document.querySelector('.hero button').addEventListener('click', () => {
+            alert('Redirecting to shop...');
+        });
+
+        document.querySelectorAll('.product-card button').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Product added to cart!');
+            });
+        });
+    </script>
+</body>
+</html>

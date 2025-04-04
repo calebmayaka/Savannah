@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-5 text-center">
+    <div class="alert alert-success">
+        <h2>Order Confirmed!</h2>
+        <p>Your order #{{ order.order_number }} has been placed successfully.</p>
+    </div>
+    
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Order Summary</h5>
+            <p>Total Amount: ${{ order.total_amount }}</p>
+            <p>Payment Method: {{ order.get_payment_method_display }}</p>
+            <a href="{% url 'order_detail' order.id %}" class="btn btn-primary">
+                View Order Details
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

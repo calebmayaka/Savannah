@@ -105,6 +105,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'sales.customUserModel'
+
+# Add these settings
+LOGIN_REDIRECT_URL = 'loggedin_home'  # Where users go after login
+LOGOUT_REDIRECT_URL = 'homepage'      # Where users go after logout
+LOGIN_URL = 'login'                   # Where users are redirected if trying to access protected pages
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/

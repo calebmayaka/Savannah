@@ -1,0 +1,84 @@
+<!-- templates/cart/view.html -->
+{% extends 'base.html' %}
+
+{% block title %}Your Shopping Cart{% endblock %}
+
+{% block content %}
+<h1 style="margin-bottom: 25px;">Your Shopping Cart</h1>
+
+{% if cart.items.count > 0 %}
+<div class="card" style="margin-bottom: 30px;">
+    <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <th style="padding: 12px; text-align: left;">Product</th>
+                <th style="padding: 12px; text-align: center;">Price</th>
+                <th style="padding: 12px; text-align: center;">Quantity</th>
+                <th style="padding: 12px; text-align: right;">Total</th>
+                <th style="padding: 12px; text-align: right;">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart.items.all %}
+            <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 12px;">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 4px;">
+                        <div>
+                            <a href="{% url 'product_detail' item.product.id %}" style="font-weight: 500; text-decoration: none; color: #333;">
+                                {{ item.product.name }}
+                            </a>
+                            <p style="color: #6c757d; margin: 5px 0 0; font-size: 0.9rem;">
+                                Sold by: {{ item.product.shop.name }}
+                            </p>
+                        </div>
+                    </div>
+                </td>
+                <td style="padding: 12px; text-align: center;">
+                    ${{ item.product.current_price }}
+                </td>
+                <td style="padding: 12px; text-align: center;">
+                    {{ item.quantity }}
+                </td>
+                <td style="padding: 12px; text-align: right;">
+                    ${{ item.total_price }}
+                </td>
+                <td style="padding: 12px; text-align: right;">
+                    <form method="post" action="{% url 'view_cart' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="item_id" value="{{ item.id }}">
+                        <button type="submit" class="btn btn-danger" style="padding: 5px 10px; font-size: 0.9rem;">
+                            Remove
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div style="display: flex; justify-content: flex-end;">
+    <div class="card" style="width: 300px;">
+        <h3 style="margin-top: 0;">Order Summary</h3>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span>Subtotal:</span>
+            <span>${{ cart.subtotal }}</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+            <span>Items:</span>
+            <span>{{ cart.total_items }}</span>
+        </div>
+        <a href="{% url 'checkout' %}" class="btn btn-success" style="width: 100%; padding: 12px;">
+            Proceed to Checkout
+        </a>
+    </div>
+</div>
+{% else %}
+<div class="card" style="text-align: center; padding: 40px;">
+    <h3 style="margin-top: 0;">Your cart is empty</h3>
+    <p style="margin-bottom: 20px;">Start shopping to add items to your cart</p>
+    <a href="{% url 'product_list' %}" class="btn btn-primary">Continue Shopping</a>
+</div>
+{% endif %}
+{% endblock %}
