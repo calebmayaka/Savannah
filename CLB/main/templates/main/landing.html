@@ -1,0 +1,149 @@
+{% extends 'accounts/base.html' %}
+
+{% block title %}Welcome to Our Platform{% endblock %}
+
+{% block content %}
+<style>
+    .hero-section {
+        background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+        color: white;
+        padding: 4rem 2rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        border-radius: 1rem;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+    }
+
+    .features-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .feature-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #6366f1;
+    }
+
+    .feature-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #1f2937;
+    }
+
+    .feature-description {
+        color: #6b7280;
+        line-height: 1.6;
+    }
+
+    .cta-section {
+        text-align: center;
+        padding: 3rem 2rem;
+        background: #f3f4f6;
+        border-radius: 1rem;
+        margin: 2rem;
+    }
+
+    .cta-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #1f2937;
+    }
+
+    .cta-description {
+        color: #6b7280;
+        margin-bottom: 2rem;
+    }
+
+    .button-group {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .btn {
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+        background: #6366f1;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background: #4f46e5;
+    }
+
+    .btn-secondary {
+        background: white;
+        color: #6366f1;
+        border: 2px solid #6366f1;
+    }
+
+    .btn-secondary:hover {
+        background: #f3f4f6;
+    }
+</style>
+
+<div class="hero-section">
+    <h1 class="hero-title">Welcome to Our Platform</h1>
+    <p class="hero-subtitle">Connect with local shops and discover amazing products</p>
+</div>
+
+<div class="features-section">
+    <div class="feature-card">
+        <div class="feature-icon">🛍️</div>
+        <h3 class="feature-title">For Customers</h3>
+        <p class="feature-description">Browse local shops, find products, and enjoy seamless shopping experience.</p>
+    </div>
+    <div class="feature-card">
+        <div class="feature-icon">🏪</div>
+        <h3 class="feature-title">For Shops</h3>
+        <p class="feature-description">Showcase your products, reach more customers, and grow your business.</p>
+    </div>
+    <div class="feature-card">
+        <div class="feature-icon">🌟</div>
+        <h3 class="feature-title">Easy to Use</h3>
+        <p class="feature-description">Simple and intuitive interface for both customers and shop owners.</p>
+    </div>
+</div>
+
+<div class="cta-section">
+    <h2 class="cta-title">Ready to Get Started?</h2>
+    <p class="cta-description">Join our platform today and experience the difference</p>
+    <div class="button-group">
+        <a href="{% url 'customer_signup' %}" class="btn btn-primary">Sign Up as Customer</a>
+        <a href="{% url 'shop_signup' %}" class="btn btn-secondary">Register Your Shop</a>
+    </div>
+</div>
+{% endblock %} 

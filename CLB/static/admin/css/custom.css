@@ -1,0 +1,843 @@
+/* Custom CSS for Commerce Admin Panel */
+
+/* Add a gradient background to the login page */
+.login-page {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+}
+
+/* Style the login box */
+.login-box {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Add a subtle animation to buttons */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the sidebar */
+.sidebar {
+    background: linear-gradient(180deg, #343a40 0%, #212529 100%);
+}
+
+/* Add a subtle border to cards */
+.card {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the navbar */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Add a subtle animation to the logo */
+.navbar-brand img {
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.05);
+}
+
+/* Style the footer */
+.footer {
+    background: linear-gradient(90deg, #343a40 0%, #212529 100%);
+    color: #fff;
+    padding: 1rem 0;
+}
+
+/* Add a subtle animation to the sidebar menu items */
+.sidebar-menu li a {
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding-left: 1.5rem;
+}
+
+/* Style the table headers */
+thead th {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+}
+
+/* Add a subtle animation to the table rows */
+tbody tr {
+    transition: all 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+/* Style the pagination */
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* Add a subtle animation to the pagination links */
+.pagination .page-link {
+    transition: all 0.2s ease;
+}
+
+.pagination .page-link:hover {
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+/* Style the form inputs */
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Style the select inputs */
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'%3E%3Cpath fill='%23343a40' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    padding-right: 2.5rem;
+}
+
+/* Style the checkboxes */
+.form-check-input {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: 0.25rem;
+    transition: all 0.2s ease;
+}
+
+.form-check-input:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* Style the radio buttons */
+.form-check-input[type="radio"] {
+    border-radius: 50%;
+}
+
+/* Style the file inputs */
+.form-control[type="file"] {
+    padding: 0.375rem 0.75rem;
+}
+
+/* Style the textarea */
+textarea.form-control {
+    min-height: 100px;
+}
+
+/* Style the alert messages */
+.alert {
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Style the badges */
+.badge {
+    font-weight: 500;
+    padding: 0.35em 0.65em;
+    border-radius: 5px;
+}
+
+/* Style the tooltips */
+.tooltip .tooltip-inner {
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the popovers */
+.popover {
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the modals */
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.modal-footer {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Style the tabs */
+.nav-tabs .nav-link {
+    border-radius: 5px 5px 0 0;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover {
+    border-color: #e9ecef #e9ecef #dee2e6;
+}
+
+.nav-tabs .nav-link.active {
+    font-weight: 500;
+}
+
+/* Style the progress bars */
+.progress {
+    height: 0.5rem;
+    border-radius: 5px;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    background-color: #007bff;
+    transition: width 0.6s ease;
+}
+
+/* Style the list groups */
+.list-group-item {
+    border-radius: 5px;
+    margin-bottom: 0.25rem;
+    transition: all 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Style the cards */
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+/* Style the tables */
+.table {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.table th {
+    font-weight: 500;
+}
+
+/* Style the buttons */
+.btn {
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #212529;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+    color: #212529;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+.btn-light {
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+    color: #212529;
+}
+
+.btn-light:hover {
+    background-color: #e2e6ea;
+    border-color: #dae0e5;
+    color: #212529;
+}
+
+.btn-dark {
+    background-color: #343a40;
+    border-color: #343a40;
+}
+
+.btn-dark:hover {
+    background-color: #23272b;
+    border-color: #1d2124;
+}
+
+/* Style the links */
+a {
+    color: #007bff;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+/* Style the code */
+code {
+    color: #e83e8c;
+    background-color: #f8f9fa;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 85%;
+}
+
+/* Style the pre */
+pre {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Style the blockquote */
+blockquote {
+    border-left: 4px solid #007bff;
+    padding-left: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-style: italic;
+}
+
+/* Style the hr */
+hr {
+    border-top: 1px solid #dee2e6;
+    margin: 1rem 0;
+}
+
+/* Style the small */
+small {
+    font-size: 80%;
+    font-weight: 400;
+}
+
+/* Style the mark */
+mark {
+    background-color: #fff3cd;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+}
+
+/* Style the abbr */
+abbr[title] {
+    border-bottom: 1px dotted #6c757d;
+    cursor: help;
+}
+
+/* Style the kbd */
+kbd {
+    background-color: #f8f9fa;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+    color: #495057;
+    display: inline-block;
+    font-size: 85%;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0.2rem 0.4rem;
+}
+
+/* Style the samp */
+samp {
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 85%;
+}
+
+/* Style the var */
+var {
+    font-style: italic;
+}
+
+/* Style the time */
+time {
+    color: #6c757d;
+}
+
+/* Style the dfn */
+dfn {
+    font-style: italic;
+}
+
+/* Style the sub and sup */
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+/* Style the del and ins */
+del {
+    color: #6c757d;
+    text-decoration: line-through;
+}
+
+ins {
+    background-color: #d4edda;
+    color: #155724;
+    text-decoration: none;
+}
+
+/* Style the u */
+u {
+    text-decoration: underline;
+}
+
+/* Style the s */
+s {
+    text-decoration: line-through;
+}
+
+/* Style the strong */
+strong {
+    font-weight: 700;
+}
+
+/* Style the em */
+em {
+    font-style: italic;
+}
+
+/* Style the b */
+b {
+    font-weight: 700;
+}
+
+/* Style the i */
+i {
+    font-style: italic;
+}
+
+/* Style the span */
+span {
+    display: inline-block;
+}
+
+/* Style the div */
+div {
+    display: block;
+}
+
+/* Style the p */
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* Style the h1, h2, h3, h4, h5, h6 */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* Style the ul, ol */
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+/* Style the li */
+li {
+    display: list-item;
+}
+
+/* Style the dl */
+dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* Style the dt */
+dt {
+    font-weight: 700;
+}
+
+/* Style the dd */
+dd {
+    margin-bottom: 0.5rem;
+    margin-left: 0;
+}
+
+/* Style the figure */
+figure {
+    margin: 0 0 1rem;
+}
+
+/* Style the figcaption */
+figcaption {
+    font-size: 90%;
+    color: #6c757d;
+}
+
+/* Style the img */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Style the svg */
+svg {
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+/* Style the table */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* Style the th */
+th {
+    text-align: inherit;
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+/* Style the td */
+td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+/* Style the thead */
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+/* Style the tbody */
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+/* Style the tfoot */
+tfoot {
+    display: table-footer-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+/* Style the tr */
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+/* Style the th, td */
+th, td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+/* Style the thead th */
+thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+/* Style the tbody + tbody */
+tbody + tbody {
+    border-top: 2px solid #dee2e6;
+}
+
+/* Style the .table-sm th, .table-sm td */
+.table-sm th, .table-sm td {
+    padding: 0.3rem;
+}
+
+/* Style the .table-bordered */
+.table-bordered {
+    border: 1px solid #dee2e6;
+}
+
+.table-bordered th, .table-bordered td {
+    border: 1px solid #dee2e6;
+}
+
+/* Style the .table-borderless */
+.table-borderless th, .table-borderless td, .table-borderless thead th, .table-borderless tbody + tbody {
+    border: 0;
+}
+
+/* Style the .table-striped */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Style the .table-hover */
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.075);
+}
+
+/* Style the .table-primary */
+.table-primary, .table-primary > th, .table-primary > td {
+    background-color: #b8daff;
+}
+
+.table-hover .table-primary:hover {
+    background-color: #a7c5eb;
+}
+
+.table-hover .table-primary:hover > td, .table-hover .table-primary:hover > th {
+    background-color: #a7c5eb;
+}
+
+/* Style the .table-secondary */
+.table-secondary, .table-secondary > th, .table-secondary > td {
+    background-color: #d6d8db;
+}
+
+.table-hover .table-secondary:hover {
+    background-color: #c4c8cb;
+}
+
+.table-hover .table-secondary:hover > td, .table-hover .table-secondary:hover > th {
+    background-color: #c4c8cb;
+}
+
+/* Style the .table-success */
+.table-success, .table-success > th, .table-success > td {
+    background-color: #c3e6cb;
+}
+
+.table-hover .table-success:hover {
+    background-color: #b1dfbb;
+}
+
+.table-hover .table-success:hover > td, .table-hover .table-success:hover > th {
+    background-color: #b1dfbb;
+}
+
+/* Style the .table-danger */
+.table-danger, .table-danger > th, .table-danger > td {
+    background-color: #f5c6cb;
+}
+
+.table-hover .table-danger:hover {
+    background-color: #f1b0b7;
+}
+
+.table-hover .table-danger:hover > td, .table-hover .table-danger:hover > th {
+    background-color: #f1b0b7;
+}
+
+/* Style the .table-warning */
+.table-warning, .table-warning > th, .table-warning > td {
+    background-color: #ffeeba;
+}
+
+.table-hover .table-warning:hover {
+    background-color: #fff1c0;
+}
+
+.table-hover .table-warning:hover > td, .table-hover .table-warning:hover > th {
+    background-color: #fff1c0;
+}
+
+/* Style the .table-info */
+.table-info, .table-info > th, .table-info > td {
+    background-color: #bee5eb;
+}
+
+.table-hover .table-info:hover {
+    background-color: #abdde5;
+}
+
+.table-hover .table-info:hover > td, .table-hover .table-info:hover > th {
+    background-color: #abdde5;
+}
+
+/* Style the .table-light */
+.table-light, .table-light > th, .table-light > td {
+    background-color: #fdfdfe;
+}
+
+.table-hover .table-light:hover {
+    background-color: #ececf0;
+}
+
+.table-hover .table-light:hover > td, .table-hover .table-light:hover > th {
+    background-color: #ececf0;
+}
+
+/* Style the .table-dark */
+.table-dark, .table-dark > th, .table-dark > td {
+    background-color: #c6c8ca;
+}
+
+.table-hover .table-dark:hover {
+    background-color: #b9bbbe;
+}
+
+.table-hover .table-dark:hover > td, .table-hover .table-dark:hover > th {
+    background-color: #b9bbbe;
+}
+
+/* Style the .table-active */
+.table-active, .table-active > th, .table-active > td {
+    background-color: rgba(0, 0, 0, 0.075);
+}
+
+.table-hover .table-active:hover {
+    background-color: rgba(0, 0, 0, 0.075);
+}
+
+.table-hover .table-active:hover > td, .table-hover .table-active:hover > th {
+    background-color: rgba(0, 0, 0, 0.075);
+}
+
+/* Style the .table-responsive */
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Style the .table-responsive-sm */
+@media (max-width: 575.98px) {
+    .table-responsive-sm {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Style the .table-responsive-md */
+@media (max-width: 767.98px) {
+    .table-responsive-md {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Style the .table-responsive-lg */
+@media (max-width: 991.98px) {
+    .table-responsive-lg {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Style the .table-responsive-xl */
+@media (max-width: 1199.98px) {
+    .table-responsive-xl {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Style the .table-responsive-xxl */
+@media (max-width: 1399.98px) {
+    .table-responsive-xxl {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+} 

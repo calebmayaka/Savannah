@@ -1,0 +1,95 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static "admin/css/forms.css" %}">
+  <style>
+    .welcome-email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .welcome-email-form {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+    .welcome-email-title {
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 24px;
+      text-align: center;
+    }
+    .welcome-email-description {
+      margin-bottom: 20px;
+      color: #666;
+    }
+    .welcome-email-form-group {
+      margin-bottom: 20px;
+    }
+    .welcome-email-label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .welcome-email-select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .welcome-email-button {
+      background-color: #417690;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+    }
+    .welcome-email-button:hover {
+      background-color: #295570;
+    }
+    .welcome-email-warning {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #fff3cd;
+      border: 1px solid #ffeeba;
+      border-radius: 4px;
+      color: #856404;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+<div class="welcome-email-container">
+  <div class="welcome-email-form">
+    <h1 class="welcome-email-title">Send Welcome Emails</h1>
+    
+    <p class="welcome-email-description">
+      Use this form to send welcome emails to users. You can select which type of users to send emails to.
+    </p>
+    
+    <div class="welcome-email-warning">
+      <strong>Warning:</strong> This will send emails to all selected users. This action cannot be undone.
+    </div>
+    
+    <form method="post">
+      {% csrf_token %}
+      <div class="welcome-email-form-group">
+        <label for="user_type" class="welcome-email-label">Select User Type:</label>
+        <select name="user_type" id="user_type" class="welcome-email-select">
+          {% for type in user_types %}
+            <option value="{{ type.value }}">{{ type.label }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      
+      <button type="submit" class="welcome-email-button">Send Welcome Emails</button>
+    </form>
+  </div>
+</div>
+{% endblock %} 

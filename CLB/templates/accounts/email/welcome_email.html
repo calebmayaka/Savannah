@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .content {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to Commerce!</h1>
+    </div>
+    <div class="content">
+        <p>Dear {{ user.name }},</p>
+        <p>Thank you for joining Commerce! We're excited to have you as part of our community.</p>
+        
+        {% if user_type == 'customer' %}
+        <p>As a customer, you can now:</p>
+        <ul>
+            <li>Browse products from various shops</li>
+            <li>Add items to your cart</li>
+            <li>Place orders</li>
+            <li>Track your orders</li>
+        </ul>
+        {% else %}
+        <p>As a shop owner, you can now:</p>
+        <ul>
+            <li>Add and manage your products</li>
+            <li>Process customer orders</li>
+            <li>Track your sales</li>
+            <li>Manage your shop profile</li>
+        </ul>
+        {% endif %}
+        
+        <p>To get started, click the button below:</p>
+        <a href="{{ site_url }}{% if user_type == 'customer' %}/profile{% else %}/shop/dashboard{% endif %}" class="button">
+            {% if user_type == 'customer' %}Go to Profile{% else %}Go to Dashboard{% endif %}
+        </a>
+        
+        <p>If you have any questions, feel free to contact our support team.</p>
+    </div>
+    <div class="footer">
+        <p>This email was sent to {{ user.email }}</p>
+        <p>&copy; {% now "Y" %} Commerce. All rights reserved.</p>
+    </div>
+</body>
+</html> 
